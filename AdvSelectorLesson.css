@@ -1,0 +1,74 @@
+/*-----------------------------------------
+    Notes by Chenelle Travis
+    1/01/2020
+    Relearning CSS Selectors
+    Week 2 CSS3 Course Univ. of Michigan.
+------------------------------------------*/
+
+/*--- Reset All Defaults for Debugging ---*/
+* {
+    margin: none;
+    padding: none;
+    border: 1px solid gray;
+}
+
+/*--- Decendant Selectors (nav a {}) ---*/
+div a {
+    padding: 4px; 
+}
+/*--- Child Selectors or Direct Decendents (nav > a) ---*/
+nav > a {
+    /* this contrains = no intermediate tags*/
+}
+
+/*--- Adjacent Siblings (hl + ol) ---*/
+ul + ol {
+    /*tags must be on same level and follow */
+
+}
+
+/*--- ID Selectors ---*/
+#anIDtag {
+    border: 5px solid #0006CC;
+    margin:0 auto;
+}
+
+/*--- Class Selectors ---*/
+.thumbnail{
+    border: 1px solid #0006CC;
+    width: 20%;
+}
+
+/*--- Narrowing Selectors ---*/
+p.main {
+    padding: 5px;
+}
+header img.hot {
+    
+}
+
+/*--- Combine Multiple Rules ---*/
+p, ul, #main, .hot {
+    margin: 3px !important; /* no confliction */
+}
+
+/*--- Attribute Selectors ---*/
+/* (only format links going to info.html) */
+a[href='info.html']{
+    text-decoration: wavy red;
+}
+
+/* Using Operators Sections
+
+^ match the beginning exactly a[href^='http://github.com']
+$ match the end exactly img[src$='.png']
+* wildcard a[href*='github']
+
+write tag attributes alphabetical
+<li class="fritos keyboard tacobell" id="main">
+Browsers overwrites old elements.
+
+main.css
+second.css <- overwrites repeat selectors from main.css
+
+*/
