@@ -1,0 +1,28 @@
+Example;a:after,Description;Generated Content,Explanation;Creates a pseudo-element inside the selected element at the end
+Example;a:link,Description;Link Pseudo-class,Explanation;Link Pseudo-class
+Example;a:visited,Description;Link Pseudo-class,Explanation;Selects a link that has been visited by a user
+Example;a:hover,Description;Action Pseudo-class,Explanation;Selects an element when a user has hovered their cursor over it
+Example;a:active,Description;Action Pseudo-class,Explanation;Selects an element when a user has engaged it
+Example;a:focus,Description;Action Pseudo-class,Explanation;Selects an element when a user has made it their focus point
+Example;input:enabled,Description;State Pseudo-class,Explanation;Selects an element in the default enabled state
+Example;input:disabled,Description;State Pseudo-class,Explanation; an element in the disabled state, by way of the disabled attribute
+Example;input:checked,Description;State Pseudo-class,Explanation;Selects a checkbox or radio button that has been checked
+Example;input:indeterminate,Description;State Pseudo-class,Explanation;Selects a checkbox or radio button that neither been checked or unchecked, leaving it in an indeterminate state
+Example;li:first-child,Description;Structural Pseudo-class,Explanation;Selects an element that is the first within a parent
+Example;li:last-child,Description;Structural Pseudo-class,Explanation;Selects an element that is the last within a parent
+Example;div:only-child,Description;Structural Pseudo-class,Explanation;Selects an element that is the only element within a parent
+Example;p:first-of-type,Description;Structural Pseudo-class,Explanation;Selects an element that is the first of its type within a parent
+Example;p:last-of-type,Description;Structural Pseudo-class,Explanation;Selects an element that is the last of its type within a parent
+Example;img:only-of-type,Description;Structural Pseudo-class,Explanation;Selects an element that is the only of its type within a parent
+Example;li:nth-child(2n+3),Description;Structural Pseudo-class,Explanation;Selects an element that matches the given number or expression, counting all elements from the beginning of the document tree
+Example;li:nth-last-child(3n+2),Description;Structural Pseudo-class,Explanation;Selects an element that matches the given number or expression, counting all elements from the end of the document tree
+Example;p:nth-of-type(3n),Description;Structural Pseudo-class,Explanation;Selects an element that matches the given number or expression, counting only elements of its type from the beginning of the document tree
+Example;p:nth-last-of-type(2n+1),Description;Structural Pseudo-class,Explanation;Selects an element that matches the given number or expression, counting only elements of its type from the end of the document tree
+Example;section:target,Description;Target Pseudo-class,Explanation;Selects an element whose ID attribute value matches that of the URI fragment identifier
+Example;div:before,Description;Generated Content,Explanation;Creates a pseudo-element inside the selected element at the beginning
+Example;div:empty,Description;Empty Pseudo-class,Explanation;Selects an element that does not contain any children or text nodes
+Example;div:not(.awesome),Description;Negation Pseudo-class,Explanation;Selects an element not represented by the stated argument
+Example;Class Example,Description;See Bottom AdvSelectorLesson.css,Explanation;<a class="arrow" href="#">Example</a>
+Example;.alpha:first-letter,Description;Textual Pseudo-elements,Explanation;Selects the first letter of text within an element
+Example;.bravo:first-line,Description;Textual Pseudo-elements,Explanation;Selects the first line of text within an element
+Example;::selection,Description;Fragment Pseudo-element,Explanation;Selects the part of a document which has been selected, or highlighted, by a users’ actions

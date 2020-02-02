@@ -3,32 +3,132 @@
     1/01/2020
     Relearning CSS Selectors
     Week 2 CSS3 Course Univ. of Michigan.
+    See AdvCSSheet for simplified table.
 ------------------------------------------*/
 
 /*--- Reset All Defaults for Debugging ---*/
 * {
     margin: none;
-    padding: none;
-    border: 1px solid gray;
+    padding: 3px;
 }
-
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 87.5%;
+    font-family: whitney ssm a,whitney ssm b,lucida grande,lucida sans,Verdana,Helvetica,Arial,sans-serif;
+    line-height: 24px;
+    line-height: 1.5rem;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    transition: all .25s linear;
+}
+html, .highlight code, .form-toggle, .bsa-cpc ._default_ {
+    color: rgb(32, 32, 32);
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right:auto;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.title {
+    background: rgb(163, 163, 163);
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th {
+    background: #42444e;
+    color: #fff;
+    text-align: left;
+}
+code {
+    line-height: 1;
+    font-family: source code pro,Inconsolata,lucida console,Terminal,courier new,Courier;
+    color: #9799a7;
+}
 /*--- Decendant Selectors (nav a {}) ---*/
 div a {
     padding: 4px; 
+}
+.tabular-data th, .tabular-data td {
+    border-left: 1px solid #cecfd5;
+    border-left: .07142857rem solid #cecfd5;
+    border-top: 1px solid #cecfd5;
+    border-top: .07142857rem solid #cecfd5;
+    padding: 11px 15px 12px;
+    padding: .78571429rem 1.07142857rem .85714286rem;
+}
+.tabular-data th, .tabular-data td {
+    vertical-align: top;
+}
+.tabular-data th {
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6, b, strong, .btn, .form-label, .tabular-data th, .bsa-cpc .default-title:before, .recommended-course-title, .label-new {
+    font-weight: 600;
 }
 /*--- Child Selectors or Direct Decendents (nav > a) ---*/
 nav > a {
     /* this contrains = no intermediate tags*/
 }
-
+thead tr td:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background: rgb(163, 163, 163);
+    font-weight: bolder;
+}
+td:first-child {
+    border-left: 1px solid #c6c9cc;
+}
+tr:nth-child(even) td {
+    background: #eaeaed;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+  
+/* this contrains and adds a class*/
+.container>*, .clamp {
+    max-width: 600px;
+    max-width: 42.85714286rem;
+}
+.position-relative, .container>*, .clamp, .highlight, .highlight .lineno, .form-toggle, .bsa-cpc .default-title:before, .wrap-macro, .wrap-micro, .label-new {
+    position: relative;
+}
 /*--- Adjacent Siblings (hl + ol) ---*/
 ul + ol {
-    /*tags must be on same level and follow */
+    /*Selects an element that follows directly 
+    after the prior element, in which both 
+    elements share the same parent */
+}
 
+/*--- General Sibling Selector ---*/
+h2 ~ p {
+    /*Selects an element that follows anywhere 
+    after the prior element, in which both 
+    elements share the same parent */
 }
 
 /*--- ID Selectors ---*/
-#anIDtag {
+#anIDselector {
     border: 5px solid #0006CC;
     margin:0 auto;
 }
@@ -37,6 +137,10 @@ ul + ol {
 .thumbnail{
     border: 1px solid #0006CC;
     width: 20%;
+}
+.margin-bottom, h1, h2, h3, h4, h5, p, .note, ul, ol, .list-tall li, figure, .share, .tabular-data, .ad-spot, .bsa-cpc #_default_, .primary-nav li, .course-overview-btn, .recommended-courses-empty, .pagination ul, .sg-colors, .toc {
+    margin-bottom: 24px;
+    margin-bottom: 1.71428571rem;
 }
 
 /*--- Narrowing Selectors ---*/
@@ -58,11 +162,21 @@ a[href='info.html']{
     text-decoration: wavy red;
 }
 
+a[rel~="tag"] {
+    /* find chars in whitespace */
+}
+a[lang|="en"] {
+    /* example 
+        <a href="#" lang="en-US"></a>
+    */
+}
 /* Using Operators Sections
 
 ^ match the beginning exactly a[href^='http://github.com']
 $ match the end exactly img[src$='.png']
 * wildcard a[href*='github']
+| partial tag attribute
+~ surrounded chars in whitespace
 
 write tag attributes alphabetical
 <li class="fritos keyboard tacobell" id="main">
@@ -72,3 +186,186 @@ main.css
 second.css <- overwrites repeat selectors from main.css
 
 */
+
+/*------ Pseudo-Classes ------
+Based on a users’ actions different pseudo-classes may be dynamically applied to an element, of which include the :hover, :active, and :focus pseudo-classes. The :hover pseudo-class is applied to an element when a user moves their cursor over the element, most commonly used with anchor elements. The :active pseudo-class is applied to an element when a user engages an element, such as clicking on an element. Lastly, the :focus pseudo-class is applied to an element when a user has made an element the focus point of the page, often by using the keyboard to tab from one element to another.
+*/
+
+a:hover { text-decoration-color: #0f3f69; }
+a:active { text-decoration-color: #5c0000; }
+a:focus { text-decoration-color: rgb(90, 35, 141);}
+input:enabled {}
+input:disabled {}
+input:checked{}
+input:indeterminate {}
+
+/* HTML 
+
+<ul>
+  <li>This list item will be selected</li>
+  <li>
+    <div>This div will be selected</div>
+  </li>
+  <li>
+    <div></div>
+    <div></div>
+  </li>
+  <li>This list item will be selected</li>
+</ul>
+
+*/
+li:first-child {}   /* first list tag */
+li:last-child {}    /* last list tag */
+div:only-child {}   /* div only tag */
+
+/*
+            Child Paragraph -> Grand Child
+Parent ->
+            Child Anchor    -> Grand Child
+
+.Parent .Child .Grand {}
+main .Chenelle .decendent {
+    font-size: 3rem;
+}
+*/
+
+p:first-of-type {}  /* first paragraph in doc */
+p:last-of-type {}   /* last paragraph in doc */
+img:only-of-type {} /* only image in doc */
+
+/* --------Using Pseudo-class Numbers & Expressions--------
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+As mentioned, using numbers outright within a pseudo-class will count from the beginning, or end, of the document tree and select one element accordingly. For example, the li:nth-child(4) selector will select the fourth list item within a list. Counting begins with the first list item and increases by one for each list item, until finally locating and selecting the fourth item. When using a number outright it must be a positive number.
+
+Expressions for pseudo-classes fall in the format of an, an+b, an-b, n+b, -n+b, and -an+b. The same expression may be translated and read as (a×n)±b. The a variable stands for the multiplier in which elements will be counted in while the b variable stands for where the counting will begin or take place.
+
+For example, the li:nth-child(3n) selector will identify every third list item within a list. Using the expression this equates to 3×0, 3×1, 3×2, and so forth. As you can see the results of this expression lead to the third, sixth, and every element a multiple of three being selected.
+
+Additionally, the odd and even keyword values may be used. As expected, these will select odd or even elements respectively. Should keyword values not be appealing the expression of 2n+1 would select all odd elements while the expression of 2n would select all even elements.
+
+Using the li:nth-child(4n+7) selector will identify every fourth list item starting with the seventh list item. Again, using the expression this equates to (4×0)+7, (4×1)+7, (4×2)+7, and so forth. The results of this expression leading to the seventh, eleventh, fifteenth, and every element that is a multiple of four here on out being selected.
+
+Using the n argument without being prefixed by a number results in the a variable being interpreted as 1. With the li:nth-child(n+5) selector every list item will be selected starting with the fifth list item, leaving the first four list items unselected. Within the expression this breaks down as (1×0)+5, (1×1)+5, (1×2)+5, and so forth.
+
+To make things a bit more complicated negative numbers may also be used. For example, the li:nth-child(6n-4) selector will start counting every sixth list item starting at negative four, selecting the second, eighth, and fourteenth list items and so forth. The same selector, li:nth-child(6n-4), could also be written as li:nth-child(6n+2), without the use of a negative b variable.
+
+A negative a variable, or a negative n argument, must be followed by a positive b variable. When preceded by a negative a variable or negative n argument the b variable identifies how high the counting will reach. For example, the li:nth-child(-3n+12) selector will select every third list item within the first twelve list items. The selector li:nth-child(-n+9) will select the first nine list items within a list, as the n argument, without any stated a variable, is defaulted to -1.
+
+*/
+
+li:nth-child(3n) {}
+
+/* HTML
+
+<ul>
+  <li></li>
+  <li></li>
+  <li>This list item will be selected</li>
+  <li></li>
+  <li></li>
+  <li>This list item will be selected</li>
+</ul>
+
+*/
+
+li:nth-child(2n+3) {}
+
+/* HTML  2n+3 will id every second list item starting with the third and then onward.
+
+<ul>
+  <li></li>
+  <li></li>
+  <li>This list item will be selected</li>
+  <li></li>
+  <li>This list item will be selected</li>
+  <li></li>
+</ul>
+
+*/
+
+li:nth-child(-n+4) {}
+
+/* HTML
+
+<ul>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li>This list item will be selected</li>
+  <li></li>
+  <li></li>
+</ul>
+
+Target Pseudo-class
+The :target pseudo-class is used to style elements when an element’s ID attribute value matches that of the URI fragment identifier. The fragment identifier within a URI can be recognized by the hash character, #, and what directly follows it. The URL http://example.com/index.html#hello includes the fragment identifier of hello. When this identifier matches the ID attribute value of an element on the page, <section id="hello"> for example, that element may be identified and stylized using the :target pseudo-class. Fragment identifiers are most commonly seen when using on page links, or linking to another part of the same page.
+
+*/
+
+section:target {}
+/* <section id="hello"></section> 
+
+Empty Pseudo-class
+The :empty pseudo-class allows elements that do not contain children or text nodes to be selected. Comments, processing instructions, and empty text nodes are not considered children and are not treated as such.
+
+*/
+
+div:empty {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+Single Colon (:) versus Double Colons (::)
+The fragment pseudo-element was added with CSS3 and in attempt to differentiate pseudo-classes from pseudo-elements the double colons were added to pseudo-elements. Fortunately most browsers will support both values, single or double colons, for pseudo-elements however the ::selection pseudo-element must always start with double colons.
+
+When selecting any of the text within the demonstration below the background will appear orange and any text shadows will be removed thanks to the ::selection fragment pseudo-element. Also note, the ::-moz-selection Mozilla prefixed fragment pseudo-element has been added to ensure the best support for all browsers.
+*/
+
+::-moz-selection {
+    background: #fff3eb;
+}
+::selection {
+  background: #b9ada5;
+}
+
+/*----------Example Area from AdvCSSheet.html ---------*/
+.arrow {
+    background: #2db34a;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    position: relative;
+    text-decoration: none;
+  }
+  .arrow:before, .arrow:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+  .arrow:before {
+    border-bottom: 15px solid #2db34a;
+    border-left: 15px solid transparent;
+    border-top: 15px solid #2db34a;
+    left: -15px;
+  }
+  .arrow:after {
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #207e34;
+    border-top: 15px solid transparent;
+    right: -15px;
+  }
+  .arrow:hover {
+    background: #ff7b29;
+  }
+  .arrow:hover:before {
+    border-bottom: 15px solid #ff7b29;
+    border-top: 15px solid #ff7b29;
+  }
+  .arrow:hover:after {
+    border-left: 15px solid #ff7b29;
+  }
+  
