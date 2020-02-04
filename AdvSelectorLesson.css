@@ -49,7 +49,6 @@ tbody {
 tr {
     display: table-row;
     vertical-align: inherit;
-    border-color: inherit;
 }
 th {
     background: #42444e;
@@ -66,10 +65,6 @@ div a {
     padding: 4px; 
 }
 .tabular-data th, .tabular-data td {
-    border-left: 1px solid #cecfd5;
-    border-left: .07142857rem solid #cecfd5;
-    border-top: 1px solid #cecfd5;
-    border-top: .07142857rem solid #cecfd5;
     padding: 11px 15px 12px;
     padding: .78571429rem 1.07142857rem .85714286rem;
 }
@@ -78,6 +73,26 @@ div a {
 }
 .tabular-data th {
     text-align: left;
+}
+.btn {
+    height:28px;
+    vertical-align: middle;
+    background-color: rgb(83, 83, 83);
+    border: 2px solid grey;
+}
+.srch {
+    height:28px;
+    vertical-align: middle;
+}
+.close {
+    text-align: center;
+    color:#fff;
+    width: 16px;
+	font-weight: bold;
+	display: inline;
+	background-color: transparent;
+    float: right;
+    vertical-align: middle;
 }
 h1, h2, h3, h4, h5, h6, b, strong, .btn, .form-label, .tabular-data th, .bsa-cpc .default-title:before, .recommended-course-title, .label-new {
     font-weight: 600;
@@ -94,6 +109,14 @@ thead tr td:first-child {
 }
 td:first-child {
     border-left: 1px solid #c6c9cc;
+    border-right: 1px solid #e3e6e9;
+}
+td:last-child {
+    border-right: 1px solid #c6c9cc;
+}
+thead tr td div {
+    float: right;
+
 }
 tr:nth-child(even) td {
     background: #eaeaed;
@@ -104,7 +127,7 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
     border-bottom-right-radius: 6px;
 }
-  
+
 /* this contrains and adds a class*/
 .container>*, .clamp {
     max-width: 600px;
@@ -128,14 +151,27 @@ h2 ~ p {
 }
 
 /*--- ID Selectors ---*/
-#anIDselector {
-    border: 5px solid #0006CC;
+#window_body {
     margin:0 auto;
+    border-radius: 5px;
+    
 }
-
+#findwindow {
+    margin: 0 auto;
+    background: #000;
+    border: 1px solid grey;
+	color: grey;
+	width: 450px;
+    top: 20px;
+	right: 8%;
+    padding: 0px; 
+    z-Index: 2000;
+    font-Size: 14px;
+	overflow-X: hidden;
+}
 /*--- Class Selectors ---*/
 .thumbnail{
-    border: 1px solid #0006CC;
+    border: 1px solid rgb(27, 27, 27);
     width: 20%;
 }
 .margin-bottom, h1, h2, h3, h4, h5, p, .note, ul, ol, .list-tall li, figure, .share, .tabular-data, .ad-spot, .bsa-cpc #_default_, .primary-nav li, .course-overview-btn, .recommended-courses-empty, .pagination ul, .sg-colors, .toc {
