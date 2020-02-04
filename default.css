@@ -785,7 +785,6 @@ meter {
     width: 5em;
     vertical-align: -0.2em;
 }
-#endif
 /* progress */
 progress {
     -webkit-appearance: progress-bar;
